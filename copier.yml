@@ -1,0 +1,17 @@
+project_name:
+  type: str
+  help: What is your project name? (ie. "My beautiful package")
+
+package_name:
+  type: str
+  help: What is the name for the main package? (ie. "my_beautiful_pacakge")
+
+project_description:
+  type: str
+  multiline: true
+  help: Description of the project for the `README.md`
+
+project_description_short:
+  type: str
+  multiline: true
+  help: Short description of the project for the package DOCSTRING
