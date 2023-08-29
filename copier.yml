@@ -1,3 +1,11 @@
+_tasks:
+  - git init
+  - poetry install --with dev
+  - >-
+    {% if sphinx_docs %}
+    poetry install --with doc
+    {% endif %}
+
 project_name:
   type: str
   help: What is your project name? (ie. "My beautiful package")
@@ -5,6 +13,14 @@ project_name:
 package_name:
   type: str
   help: What is the name for the main package? (ie. "my_beautiful_pacakge")
+
+pypi_package_name:
+  type: str
+  help: What will the name for the package be on PyPi? (ie. "ds-my-beautiful-package")
+
+pypi_package_description:
+  type: str
+  help: What will the the description be for the package on PyPi?
 
 project_description:
   type: str
@@ -15,3 +31,25 @@ project_description_short:
   type: str
   multiline: true
   help: Short description of the project for the package DOCSTRING
+
+license:
+  type: str
+  help: What license are you going to use?
+  choices:
+  - GPL
+  - MPL
+  - Apache
+  - MIT
+  - BSD
+
+sphinx_docs:
+  type: bool
+  help: Configure Sphinx documentation?
+
+github_workflow:
+  type: bool
+  help: Configure GitHub workflow?
+
+devcontainer:
+  type: bool
+  help: Configure a DevContainer?
