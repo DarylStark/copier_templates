@@ -15,6 +15,8 @@ optional = true
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+pytest-sugar = "^0.9.7"
 pycodestyle = "^2.11.0"
 pylint = "^2.17.5"
 mypy = "^1.5.1"
@@ -50,4 +52,4 @@ push = false
 "src/{{ package_name }}/__init__.py" = ["{version}"]
 
 [tool.pytest.ini_options]
-pythonpath = ['./src/', './tests/']
+addopts = ['--cov={{ package_name }}', '--cov-report=html', '--cov-report=lcov']
